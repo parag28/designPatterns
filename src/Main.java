@@ -1,3 +1,7 @@
+import DecoratorPattern.BasePizza;
+import DecoratorPattern.ExtraCheese;
+import DecoratorPattern.Mushroom;
+import DecoratorPattern.VegDelight;
 import ObserverPattern.Observable.IphoneObservableImpl;
 import ObserverPattern.Observable.StocksObservable;
 import ObserverPattern.Observer.EmailAlertObserverImpl;
@@ -16,16 +20,20 @@ public class Main {
 //        obj.drive();
 
 //        Observer Pattern
-        StocksObservable iphoneStockObservable = new IphoneObservableImpl();
-        StocksObservable iphoneStockObservable1 = new IphoneObservableImpl();
-        NotificationAlertObserver ob1 = new EmailAlertObserverImpl("ayy@gmail.com", iphoneStockObservable);
-        NotificationAlertObserver ob2 = new EmailAlertObserverImpl("kay@gmail.com", iphoneStockObservable);
-        NotificationAlertObserver ob3 = new MobileAlertObserverImpl("99009900990", iphoneStockObservable1);
+//        StocksObservable iphoneStockObservable = new IphoneObservableImpl();
+//        StocksObservable iphoneStockObservable1 = new IphoneObservableImpl();
+//        NotificationAlertObserver ob1 = new EmailAlertObserverImpl("ayy@gmail.com", iphoneStockObservable);
+//        NotificationAlertObserver ob2 = new EmailAlertObserverImpl("kay@gmail.com", iphoneStockObservable);
+//        NotificationAlertObserver ob3 = new MobileAlertObserverImpl("99009900990", iphoneStockObservable1);
+//
+//        iphoneStockObservable.add(ob1);
+//        iphoneStockObservable.add(ob2);
+//        iphoneStockObservable.add(ob3);
+//
+//        iphoneStockObservable.setStockCount(0);
 
-        iphoneStockObservable.add(ob1);
-        iphoneStockObservable.add(ob2);
-        iphoneStockObservable.add(ob3);
-
-        iphoneStockObservable.setStockCount(0);
+//        Decorator Pattern
+        BasePizza pizza = new ExtraCheese(new Mushroom(new VegDelight()));
+        System.out.println(pizza.cost());
     }
 }
